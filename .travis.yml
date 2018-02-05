@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- stable
+before_install:
+- npm install -g gulp
+install:
+- npm install
+script:
+- npm run build
+after_success:
+- npm run deploy
+

@@ -1,37 +1,87 @@
-## Welcome to GitHub Pages
+# Cheat Sheet Generator
 
-You can use the [editor on GitHub](https://github.com/YouYueHuang/CheatSheetGenerator/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Hosted on github pages
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Cheat sheets are hosted on github pages : [https://groupe-sii.github.io/cheat-sheets/](https://groupe-sii.github.io/cheat-sheets/)
 
-### Markdown
+## Browsers support <sub><sup><sub><sub>made by <a href="https://godban.github.io">godban</a></sub></sub></sup></sub>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+| [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/chrome.png" alt="Chrome" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome |
+| --------- |
+| last 2 versions
 
-```markdown
-Syntax highlighted code block
+## Install
+gulp is needed in global in order to run compilation :
 
-# Header 1
-## Header 2
-### Header 3
+`npm  install gulp -g`
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+`yarn`
+or
+`npm install`
 
-**Bold** and _Italic_ and `Code` text
+`yarn` or `npm install`
 
-[Link](url) and ![Image](src)
+## Usage
+
+`gulp create-new-cheat-sheet --name <name> --category <tools|frameworks|languages>`
+
+Put your svg|png logo in assets/images folder
+Put your commands or codes on:
+ - src/\<name\>/first-side/column1.md
+ - src/\<name\>/first-side/column2.md
+ - src/\<name\>/reverse/column1.md
+ - src/\<name\>/reverse/column2.md
+
+## Devtools
+
+Build and reload server:
+
+`gulp watch`
+
+## Docker
+
+To simplify the installation we also provide a Dockerfile to run the application in a container.
+
+Build image:  
+`docker build -t cheatsheet .`
+
+Build image w/ proxy:  
+`docker build -t cheatsheet --build-arg http_proxy=<proxy> --build-arg https_proxy=<proxy> .`
+
+Add cheatsheet:  
+```
+docker run \
+-v $PWD:/app \
+cheatsheet:latest gulp create-new-cheat-sheet --name <name> --category <tools|frameworks|languages>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+`-v $PWD:/app` mounts the current directory as working directory inside the container.
 
-### Jekyll Themes
+Put your svg|png logo in assets/images folder  
+Put your commands or codes on:
+ - src/\<name\>/first-side/column1.md
+ - src/\<name\>/first-side/column2.md
+ - src/\<name\>/reverse/column1.md
+ - src/\<name\>/reverse/column2.md
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/YouYueHuang/CheatSheetGenerator/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Run the web server to display all the cheat-sheets:
+```
+docker run -ti \
+-v $PWD:/app \
+-p 8080:8080 \
+cheatsheet:latest
+```
 
-### Support or Contact
+## Print
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Hit `Ctrl+P` to generate the PDF version, using `Save as PDF`
+- Disable margins
+
+## Screenshots
+
+![menu](./assets/images/menu.png)
+
+![web version](./assets/images/webVersion.png)
+
+![pdf version](./assets/images/pdfVersion.png)
