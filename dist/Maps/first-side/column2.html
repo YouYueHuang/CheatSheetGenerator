@@ -1,0 +1,17 @@
+<h1 id="save-the-map-to-html">Save the map to html</h1>
+<pre><code class="lang-python">m.save(&quot;mymap.html&quot;)
+</code></pre>
+<p>Enable lat/lng popovers</p>
+<pre><code class="lang-python">m.add_child(folium.LatLngPopup())
+</code></pre>
+<p>Place markers on the fly</p>
+<pre><code class="lang-python">m.add_child(folium.ClickForMarker(popup=&#39;Waypoint&#39;))
+</code></pre>
+<p>Add html styletip</p>
+<pre><code class="lang-python">map_1.add_child(folium.Marker(
+        location=[46.7394, 2.7513],
+        popup=folium.Popup(html_info, max_width=450)
+        ,icon = folium.Icon(color=&#39;blue&#39;,icon=&#39;ok-sign&#39;)
+    )
+)
+</code></pre>

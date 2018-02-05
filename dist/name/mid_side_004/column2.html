@@ -1,0 +1,42 @@
+<pre><code class="lang-python"># Greedy and Nongreedy Matching
+# Greedy means that in ambiguous situations they will match the longest string possible. 
+# The non-greedy matches the shortest string possible has the closing curly bracket followed by a question mark.
+# the question mark can have two meanings: (1)declaring a nongreedy match or (2)flagging an optional group.
+greedyHaRegex = re.compile(r&#39;(Ha){3,5}&#39;)
+mo1 = greedyHaRegex.search(&#39;HaHaHaHaHa&#39;)
+print mo1.group()
+
+nongreedyHaRegex = re.compile(r&#39;(Ha){3,5}?&#39;)
+mo2 = nongreedyHaRegex.search(&#39;HaHaHaHaHa&#39;)
+print mo2.group()
+
+xmasRegex = re.compile(r&#39;\d+\s\w+&#39;)
+print xmasRegex.findall(&#39;12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge&#39;)
+
+# Making Your Own Character Classes
+vowelRegex = re.compile(r&#39;[aeiouAEIOU47.]&#39;)
+print vowelRegex.findall(&#39;Robocop eats baby food. BABY FOOD.1234567890.&#39;)
+
+# negative character class
+consonantRegex = re.compile(r&#39;[^aeiouAEIOU ]&#39;)
+print consonantRegex.findall(&#39;Robocop eats baby food. BABY FOOD.&#39;)
+
+beginsWithHello = re.compile(r&#39;^Hello&#39;)
+print beginsWithHello.search(&#39;Hello world!&#39;).group()
+print beginsWithHello.search(&#39;He said hello.&#39;) == None
+
+# The Caret and Dollar Sign Characters
+endsWithNumber = re.compile(r&#39;\d$&#39;)
+print endsWithNumber.search(&#39;Your number is 78942&#39;).endpos
+print endsWithNumber.search(&#39;Your number is forty two.&#39;) == None
+
+wholeStringIsNum = re.compile(r&#39;^\d+$&#39;)
+print wholeStringIsNum.search(&#39;1234567890&#39;).endpos
+print &#39;1234567890&#39;[wholeStringIsNum.search(&#39;1234567890&#39;).endpos:]
+print wholeStringIsNum.search(&#39;12345xyz67890&#39;) == None
+print wholeStringIsNum.search(&#39;12 34567890&#39;) == None
+
+#　The Wildcard Character
+atRegex = re.compile(r&#39;.at&#39;)
+print atRegex.findall(&#39;The cat in the hat sat on the flat mat.&#39;)
+</code></pre>

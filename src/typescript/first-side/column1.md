@@ -2,8 +2,11 @@ TypeScript is a super-set of JavaScript that enforce the code quality. This chea
 
 # Usage
 
-`npm install typescript`
 
+Install typescript
+`npm install -g typescript`
+
+Compile
 `> tsc hello-world.ts`
 
 # Primitives types

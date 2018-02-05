@@ -1,0 +1,27 @@
+<h1 id="string-processing">String processing</h1>
+<p>Stuff chars to the string </p>
+<pre><code class="lang-python">&#39;string&#39;.rjust(10, &#39;*&#39;)
+&#39;string&#39;.ljust(10, &#39;-&#39;)
+&#39;string&#39;.center(10, &#39;=&#39;)
+</code></pre>
+<p>Search word with pattern</p>
+<pre><code class="lang-python">&#39;Hello world!&#39;.startswith(&#39;Hello&#39;)
+&#39;Hello world!&#39;.endswith(&#39;world!&#39;)
+</code></pre>
+<p>Remove chars</p>
+<pre><code class="lang-python">&#39;string&#39;.strip(&#39;ampS&#39;)
+&#39;string&#39;.lstrip(&#39;ampS&#39;)
+&#39;string&#39;.rstrip(&#39;Smpa&#39;)
+</code></pre>
+<p>Check if the string consists of only letters and is not blank.
+<code>&#39;string&#39;.isalpha()</code></p>
+<p>Check if the string consists only of letters and numbers and is not blank.</p>
+<pre><code class="lang-python">&#39;string&#39;.isalnum()
+</code></pre>
+<p>Check if the string consists only of numeric characters and is not blank.</p>
+<pre><code class="lang-python">&#39;string&#39;.isdigit()
+</code></pre>
+<p>Check if the string consists only of spaces, tabs, and new-lines and is not blank.</p>
+<pre><code class="lang-python">&#39;\t\n &#39;.isspace() 
+&gt; True
+</code></pre>

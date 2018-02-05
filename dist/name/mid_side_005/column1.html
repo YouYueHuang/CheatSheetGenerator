@@ -1,0 +1,39 @@
+<pre><code class="lang-python"># Matching Everything with Dot-Star
+nameRegex = re.compile(r&#39;First Name: (.*) Last Name: (.*)&#39;)
+mo = nameRegex.search(&#39;First Name: Al Last Name: Sweigart&#39;)
+print mo.group(1)
+print mo.group(2)
+
+nongreedyRegex = re.compile(r&#39;&lt;.*?&gt;&#39;)
+mo = nongreedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)
+print mo.group()
+
+greedyRegex = re.compile(r&#39;&lt;.*&gt;&#39;)
+mo = greedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)
+print mo.group()
+
+# Matching Newlines with the Dot Character. The dot-star will match everything except a newline.
+noNewlineRegex = re.compile(&#39;.*&#39;)
+print noNewlineRegex.search(&#39;Serve the public trust.\nProtect the innocent.\nUphold the law.&#39;).group()
+
+newlineRegex = re.compile(&#39;.*&#39;, re.DOTALL)
+print newlineRegex.search(&#39;Serve the public trust.\nProtect the innocent.\nUphold the law.&#39;).group()
+
+#==============================================================================
+# {n,m}? or *? or +? performs a nongreedy match of the preceding group.
+# 
+# ^spam means the string must begin with spam.
+# 
+# spam$ means the string must end with spam.
+# 
+# The . matches any character, except newline characters.
+# 
+# \d, \w, and \s match a digit, word, or space character, respectively.
+# 
+# \D, \W, and \S match anything except a digit, word, or space character, respectively.
+# 
+# [abc] matches any character between the brackets (such as a, b, or c).
+# 
+# [^abc] matches any character that isn’t between the brackets.
+#==============================================================================
+</code></pre>

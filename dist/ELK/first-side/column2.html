@@ -1,0 +1,26 @@
+<h1 id="kibana">Kibana</h1>
+<p>A analytics and visualization platform</p>
+<pre><code class="lang-sh">cd kibana-6.1.3/bin
+kibana
+</code></pre>
+<p>View the cluster health in console of dev tools</p>
+<pre><code>GET /_cat/health?v
+</code></pre><p>List all indices</p>
+<pre><code>GET /_cat/indices?v
+</code></pre><p>Create an index and check</p>
+<pre><code class="lang-sh">PUT /customer?pretty
+GET /_cat/indices?v
+</code></pre>
+<p>Index and query a document</p>
+<pre><code>PUT /your_index/doc/1?pretty
+{
+  &quot;feature_1&quot;: &quot;feature_1_value&quot;
+}
+GET /your_index/doc/1?pretty
+</code></pre><p>View field mapping
+<code>GET /your_index/_mapping</code></p>
+<p>Delete index
+<code>DELETE /your_index</code></p>
+<p>Create index pattern in Management
+Index patterns: type index name, configure settings and establish index in Kibana. </p>
+<p>Create visualization in visualize</p>

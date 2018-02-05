@@ -1,0 +1,35 @@
+<p> folium version: 0.5 - Date: January 2018</p>
+<h1 id="initialize-a-map">Initialize a map</h1>
+<pre><code class="lang-python">m = folium.Map(location=(52.518611, 13.408333), zoom_start=14)
+</code></pre>
+<p>Add a for switching between layers
+folium.LayerControl().add_to(m)</p>
+<p>Making it interactive</p>
+<pre><code class="lang-python">from ipywidgets import interact
+tiles = [name.strip() for name in &quot;&quot;&quot;
+    OpenStreetMap
+    Mapbox Bright
+    Mapbox Control Room
+    Stamen Terrain
+    Stamen Toner
+    Stamen Watercolor
+    CartoDB positron
+    CartoDB dark_matter
+    cartodbdark_matter&quot;&quot;&quot;.strip().split(&#39;\n&#39;)]
+
+@interact(lat=(-90., 90.), lon=(-180., 180.), tiles=tiles, zoom=(1, 18))
+def create_map(lat=52.518611, lon=13.408333, tiles=&quot;Stamen Toner&quot;, zoom=10):
+    return folium.Map(location=(lat, lon), tiles=tiles, zoom_start=zoom)
+</code></pre>
+<p>Draw a marker and a circle</p>
+<pre><code class="lang-python">folium.Marker([52.518611, 13.408333], popup=&#39;&lt;b&gt;Timberline Lodge&lt;/b&gt;&#39;, icon = folium.Icon(color=&#39;green&#39;,icon=&#39;ok-sign&#39;)).add_to(m) 
+
+folium.features.Circle(
+    radius=100,
+    location=[52.518611, 13.408333],
+    popup=&#39;The Waterfront&#39;,
+    color=&#39;crimson&#39;,
+    fill=True,
+    fill_color=&#39;#3186cc&#39;
+).add_to(m)
+</code></pre>

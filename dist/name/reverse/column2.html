@@ -1,0 +1,31 @@
+<p>Read file</p>
+<pre><code class="lang-python">with open(&quot;path/file_name&quot;, &#39;r&#39;)
+    for index, record in enumerate(f, 0):
+        # process the data
+</code></pre>
+<p>Read and write csv</p>
+<pre><code class="lang-python">import csv
+def ReadCSVFile(read_file_name):
+    CrimeFile = open(read_file_name+&quot;.csv&quot;, &#39;r&#39;)
+    CrimeList = list(csv.reader(CrimeFile,delimiter=&#39;,&#39;,quotechar=&#39;&quot;&#39;))
+    CrimeFile.close()
+    return CrimeList
+
+def WriteCSVFile():
+    file11 = open(&quot;C:\\Users\\yhuang\\Desktop\\Reduced_coldspot.csv&quot;,&quot;a&quot;)
+    w = csv.writer(file11, delimiter=&#39;,&#39;, lineterminator=&#39;\n&#39;)
+    w.writerows([data])
+    file11.close()
+</code></pre>
+<p>read and write JSON</p>
+<pre><code class="lang-python">import json
+
+# json to text
+with open(&#39;path/file_name.json&#39;, &#39;w&#39;) as f:
+     json.dump(pythonValue, f)
+
+# text to json
+with open(&#39;path/file_name.json&#39;, &#39;r&#39;) as f:
+     data = json.load(f)
+     # data processing
+</code></pre>

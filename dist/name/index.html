@@ -1,0 +1,891 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="../common/lib/atom-one-light.css">
+    <link rel="stylesheet" href="./name.css">
+  </head>
+  <body>
+    <input type="checkbox" id="showPreview"/>
+    <div class="first-side">
+      <div class="cutter">
+<div class="cut cut-top-left">&nbsp;</div>
+<div class="cut cut-bottom-left">&nbsp;</div>
+<div class="cut cut-top-right">&nbsp;</div>
+<div class="cut cut-bottom-right">&nbsp;</div>
+</div>
+<header>
+    <div class="home-button no-print">
+        <a href="../" title="back to home cheat Sheet"><i class="material-icons">home</i></a>
+        <label for="showPreview"><i class="material-icons">visibility</i></label>
+    </div>
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+            <div class="sub-title">sous titre, une description.</div>
+        </div>
+
+        <div class="logo-container">
+            <img src="../assets/images/name.png">
+        </div>
+    </div>
+    <div class="logo-category no-print">
+        <i class="material-icons" onclick="printLarge()">print</i>
+    </div>
+</header>
+
+
+
+      <main>
+        <div class="column1">
+          <p> python version: 3.6 - Date: January 2018</p>
+<p>Launch a browser and link to target site</p>
+<pre><code class="lang-python">import webbrowser
+new = 5
+url =r&quot;https://google.com&quot;
+url =r&quot;https://www.youtube.com/watch?v=jU3P7qz3ZrM&quot;
+print (webbrowser.open(url, new=new))
+</code></pre>
+<p><strong>Pandas</strong> read csv</p>
+<pre><code class="lang-python">import pandas as pd
+csvFile = &#39;path/file_name.csv&#39;
+pd.read_csv(csvFile, encoding = &quot;ISO-8859-1&quot;)
+</code></pre>
+<p>Show html element in Jupyter notebook</p>
+<pre><code class="lang-python">from IPython.display import display, HTML
+display(HTML(&#39;&lt;img src=&quot;path/file_name.gif&quot;&gt;&#39;))
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <h1 id="template">Template</h1>
+<p><img src="../../../assets/illustration/python_method.jpg" alt="Overview" width="60%" height="50%"></p>
+<p>class</p>
+<pre><code class="lang-python">class className(object):
+    def __init__(self):
+        &quot;&quot;&quot;
+        class description
+
+        arg:
+            arg1:
+            arg2:
+
+        return:
+            return1:
+            return2:    
+        &quot;&quot;&quot;
+</code></pre>
+<p><strong>Pandas</strong> read csv</p>
+<pre><code class="lang-python">import pandas as pd
+csvFile = &#39;path/file_name.csv&#39;
+pd.read_csv(csvFile, encoding = &quot;ISO-8859-1&quot;)
+</code></pre>
+<p>Show html element in Jupyter notebook</p>
+<pre><code class="lang-python">from IPython.display import display, HTML
+display(HTML(&#39;&lt;img src=&quot;path/file_name.gif&quot;&gt;&#39;))
+</code></pre>
+
+        </div>
+      </main>
+
+      <footer class="print-only">
+  <a href="https://groupe-sii.github.io/cheat-sheets">groupe-sii.github.io/cheat-sheets</a>
+  <a href="http://www.groupe-sii.com">www.groupe-sii.com</a>
+  <a href="https://blog.groupe-sii.com">blog.groupe-sii.com</a>
+  <img src="../assets/images/logoSII-white.svg">
+</footer>
+
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <h1 id="os-sys">os, sys</h1>
+<p>Import module</p>
+<pre><code class="lang-python">import sys
+import os
+</code></pre>
+<p>Update module search path (temporary)</p>
+<pre><code class="lang-python">sys.path.append(&#39;module path&#39;)
+</code></pre>
+<p>Remove the last path</p>
+<pre><code class="lang-python">sys.path.pop(-1)
+</code></pre>
+<p>Set path</p>
+<pre><code class="lang-python">os.path.join(&#39;usr&#39;, &#39;bin&#39;, &#39;spam&#39;)
+</code></pre>
+<p>Get and change current working directory</p>
+<pre><code class="lang-python">os.getcwd()
+os.chdir(&#39;target dir&#39;)
+</code></pre>
+<p>Get a string of a relative path from the rsc path to dst path.</p>
+<pre><code class="lang-python">os.path.relpath(dst, src)
+</code></pre>
+<p>Get dir and base name</p>
+<pre><code class="lang-python">os.path.basename(path)
+os.path.dirname(path)
+</code></pre>
+<p>Finding File Sizes and Folder Contents</p>
+<pre><code class="lang-python">os.path.getsize(&#39;file path&#39;)
+os.listdir(&#39;dir path&#39;)
+</code></pre>
+<p>Get system info</p>
+<pre><code class="lang-python">os.name
+sys.platform
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <h1 id="time">time</h1>
+<ul>
+<li><p>make the thread sleep</p>
+<pre><code class="lang-python">import time 
+time.sleep(5)
+</code></pre>
+</li>
+<li><p>time format data parsing and comparison</p>
+</li>
+</ul>
+<pre><code class="lang-python">from datetime import date
+import datetime
+def time_comparator(early_year,early_month,early_date,early_hour,early_min
+                    ,now_year,now_month,now_date,now_hour,now_min):
+    previous_time = datetime.datetime(early_year,early_month,early_date,early_hour,early_min)
+    present_time = datetime.datetime(now_year,now_month,now_date,now_hour,now_min)
+    return previous_time == present_time
+
+mytime = i[12].split(&quot;/&quot;)
+yearandtime = mytime[2].split(&quot; &quot;)
+Time = yearandtime[1].split(&quot;:&quot;)
+if early_year &lt; 100:
+    early_year = 2000 + early_year
+
+year = int(result[0],10)
+month = int(result[1],10)
+date = int(result[2],10)
+hour = int(result[3],10)
+minute = int(result[4],10)
+
+Daayttt = {&quot;0&quot;:&quot;Sunday&quot;,&quot;6&quot;:&quot;Saturday&quot;,&quot;1&quot;:&quot;Monday&quot;,&quot;2&quot;:&quot;Tuesday&quot;,&quot;3&quot;:&quot;Wednesday&quot;,&quot;4&quot;:&quot;Thursday&quot;,&quot;5&quot;:&quot;Friday&quot;}
+d0 = date(2008, 12, 28)
+d1 = date(2008, 12, 29)
+delta = (d1 - d0)
+print type(delta)
+print delta//7.0
+
+time1 = datetime.datetime(2007, 12, 6, 16, 29, 43)
+time2 = datetime.datetime(2007, 12, 6, 15, 29, 43)
+a = 0
+if time1 &gt; time2:
+    a= time1-time2
+else:
+    a= time2-time1
+print a.seconds
+
+
+year,month,date,hour,minu,second = int(year),int(month,10),int(date,10),int(hour,10),int(minu,10),int(round(float(second)))
+_time = &quot;{} {} {} {} {} {}&quot;.format(year,month,date,hour,minu,second)
+</code></pre>
+
+        </div>
+      </main>
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <h1 id="string-processing">String processing</h1>
+<p>Stuff chars to the string </p>
+<pre><code class="lang-python">&#39;string&#39;.rjust(10, &#39;*&#39;)
+&#39;string&#39;.ljust(10, &#39;-&#39;)
+&#39;string&#39;.center(10, &#39;=&#39;)
+</code></pre>
+<p>Search word with pattern</p>
+<pre><code class="lang-python">&#39;Hello world!&#39;.startswith(&#39;Hello&#39;)
+&#39;Hello world!&#39;.endswith(&#39;world!&#39;)
+</code></pre>
+<p>Remove chars</p>
+<pre><code class="lang-python">&#39;string&#39;.strip(&#39;ampS&#39;)
+&#39;string&#39;.lstrip(&#39;ampS&#39;)
+&#39;string&#39;.rstrip(&#39;Smpa&#39;)
+</code></pre>
+<p>Check if the string consists of only letters and is not blank.
+<code>&#39;string&#39;.isalpha()</code></p>
+<p>Check if the string consists only of letters and numbers and is not blank.</p>
+<pre><code class="lang-python">&#39;string&#39;.isalnum()
+</code></pre>
+<p>Check if the string consists only of numeric characters and is not blank.</p>
+<pre><code class="lang-python">&#39;string&#39;.isdigit()
+</code></pre>
+<p>Check if the string consists only of spaces, tabs, and new-lines and is not blank.</p>
+<pre><code class="lang-python">&#39;\t\n &#39;.isspace() 
+&gt; True
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <h1 id="regular-expression">Regular expression</h1>
+<pre><code class="lang-python">
+#==============================================================================
+# \d
+# Any numeric digit from 0 to 9.
+# 
+# \D
+# Any character that is not a numeric digit from 0 to 9.
+# 
+# \w
+# Any letter, numeric digit, or the underscore character. (Think of this as matching “word” characters.)
+# 
+# \W
+# Any character that is not a letter, numeric digit, or the underscore character.
+# 
+# \s
+# Any space, tab, or newline character. (Think of this as matching “space” characters.)
+# 
+# \S
+# Any character that is not a space, tab, or newline.
+#==============================================================================
+import re
+
+phoneNumRegex = re.compile(r&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;)
+mo = phoneNumRegex.search(&#39;My number is 415-555-4242. And my friends is 999-444-2422&#39;)
+print(&#39;Phone number found: &#39; + mo.group())
+fa =phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;) # has no groups
+print fa
+
+phoneNumRegex = re.compile(r&#39;(\d\d\d)-(\d\d\d)-(\d\d\d\d)&#39;)
+mo = phoneNumRegex.search(&#39;My number is 415-555-4242.&#39;)
+print mo.group(1)
+print mo.group(2)
+print mo.group(0)
+print mo.groups()
+phoneNumRegex = re.compile(r&#39;(\d\d\d)-(\d\d\d)-(\d\d\d\d)&#39;) # has groups
+print phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;)
+
+
+phoneNumRegex = re.compile(r&#39;(\(\d\d\d\)) (\d\d\d-\d\d\d\d)&#39;)
+mo = phoneNumRegex.search(&#39;My phone number is (415) 555-4242.&#39;)
+print mo.groups()
+
+# Matching Multiple Groups with the Pipe
+heroRegex = re.compile (r&#39;Batman|Tina Fey&#39;)
+mo1 = heroRegex.search(&#39;Batman and Tina Fey.&#39;,7,200)
+print mo1.group()
+mo2 = heroRegex.search(&#39;Tina Fey and Batman.&#39;)
+print mo2.group()
+</code></pre>
+
+        </div>
+      </main>
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <pre><code class="lang-python">batRegex = re.compile(r&#39;Bat(man|mobile|copter|bat)&#39;)
+mo = batRegex.search(&#39;Batmobile lost a wheel&#39;)
+print mo.group()
+print mo.group(1)
+
+# Optional Matching with the Question Mark
+# Matching Zero or More with the Star
+# Matching One or More with the Plus
+batRegex = re.compile(r&#39;Bat(wo)*man&#39;)  # ? + * 
+mo1 = batRegex.search(&#39;The Adventures of Batman&#39;)
+print mo1.group()
+
+mo2 = batRegex.search(&#39;The Adventures of Batwowoman&#39;)
+if mo2 is None:
+    print mo2
+else:
+    print mo2.group()
+
+#Matching Specific Repetitions with Curly Brackets
+haRegex = re.compile(r&#39;(Ha){3}&#39;)
+mo1 = haRegex.search(&#39;HaHaHa&#39;)
+print mo1.group()
+mo2 = haRegex.search(&#39;Ha&#39;)
+print mo2 == None
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <pre><code class="lang-python"># Greedy and Nongreedy Matching
+# Greedy means that in ambiguous situations they will match the longest string possible. 
+# The non-greedy matches the shortest string possible has the closing curly bracket followed by a question mark.
+# the question mark can have two meanings: (1)declaring a nongreedy match or (2)flagging an optional group.
+greedyHaRegex = re.compile(r&#39;(Ha){3,5}&#39;)
+mo1 = greedyHaRegex.search(&#39;HaHaHaHaHa&#39;)
+print mo1.group()
+
+nongreedyHaRegex = re.compile(r&#39;(Ha){3,5}?&#39;)
+mo2 = nongreedyHaRegex.search(&#39;HaHaHaHaHa&#39;)
+print mo2.group()
+
+xmasRegex = re.compile(r&#39;\d+\s\w+&#39;)
+print xmasRegex.findall(&#39;12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge&#39;)
+
+# Making Your Own Character Classes
+vowelRegex = re.compile(r&#39;[aeiouAEIOU47.]&#39;)
+print vowelRegex.findall(&#39;Robocop eats baby food. BABY FOOD.1234567890.&#39;)
+
+# negative character class
+consonantRegex = re.compile(r&#39;[^aeiouAEIOU ]&#39;)
+print consonantRegex.findall(&#39;Robocop eats baby food. BABY FOOD.&#39;)
+
+beginsWithHello = re.compile(r&#39;^Hello&#39;)
+print beginsWithHello.search(&#39;Hello world!&#39;).group()
+print beginsWithHello.search(&#39;He said hello.&#39;) == None
+
+# The Caret and Dollar Sign Characters
+endsWithNumber = re.compile(r&#39;\d$&#39;)
+print endsWithNumber.search(&#39;Your number is 78942&#39;).endpos
+print endsWithNumber.search(&#39;Your number is forty two.&#39;) == None
+
+wholeStringIsNum = re.compile(r&#39;^\d+$&#39;)
+print wholeStringIsNum.search(&#39;1234567890&#39;).endpos
+print &#39;1234567890&#39;[wholeStringIsNum.search(&#39;1234567890&#39;).endpos:]
+print wholeStringIsNum.search(&#39;12345xyz67890&#39;) == None
+print wholeStringIsNum.search(&#39;12 34567890&#39;) == None
+
+#　The Wildcard Character
+atRegex = re.compile(r&#39;.at&#39;)
+print atRegex.findall(&#39;The cat in the hat sat on the flat mat.&#39;)
+</code></pre>
+
+        </div>
+      </main>
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <pre><code class="lang-python"># Matching Everything with Dot-Star
+nameRegex = re.compile(r&#39;First Name: (.*) Last Name: (.*)&#39;)
+mo = nameRegex.search(&#39;First Name: Al Last Name: Sweigart&#39;)
+print mo.group(1)
+print mo.group(2)
+
+nongreedyRegex = re.compile(r&#39;&lt;.*?&gt;&#39;)
+mo = nongreedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)
+print mo.group()
+
+greedyRegex = re.compile(r&#39;&lt;.*&gt;&#39;)
+mo = greedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)
+print mo.group()
+
+# Matching Newlines with the Dot Character. The dot-star will match everything except a newline.
+noNewlineRegex = re.compile(&#39;.*&#39;)
+print noNewlineRegex.search(&#39;Serve the public trust.\nProtect the innocent.\nUphold the law.&#39;).group()
+
+newlineRegex = re.compile(&#39;.*&#39;, re.DOTALL)
+print newlineRegex.search(&#39;Serve the public trust.\nProtect the innocent.\nUphold the law.&#39;).group()
+
+#==============================================================================
+# {n,m}? or *? or +? performs a nongreedy match of the preceding group.
+# 
+# ^spam means the string must begin with spam.
+# 
+# spam$ means the string must end with spam.
+# 
+# The . matches any character, except newline characters.
+# 
+# \d, \w, and \s match a digit, word, or space character, respectively.
+# 
+# \D, \W, and \S match anything except a digit, word, or space character, respectively.
+# 
+# [abc] matches any character between the brackets (such as a, b, or c).
+# 
+# [^abc] matches any character that isn’t between the brackets.
+#==============================================================================
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <pre><code class="lang-python"># Case-Insensitive Matching
+robocop = re.compile(r&#39;robocop&#39;, re.IGNORECASE)
+print robocop.search(&#39;Robocop is part man, part machine, all cop.&#39;).group()
+
+#Substituting Strings with the sub() Method
+# you can type \1, \2, \3, and so on, to mean “Enter the text of group 1, 2, 3, and so on, in the substitution.”
+namesRegex = re.compile(r&#39;Agent \w+&#39;)
+print namesRegex.sub(&#39;CENSORED&#39;, &#39;Agent Alice gave the secret documents to Agent Bob.&#39;)
+
+agentNamesRegex = re.compile(r&#39;Agent (\w)(\w)\w*&#39;)
+print agentNamesRegex.sub(r&#39;\2****&#39;, &#39;Agent Alice told Agent Carol that Agent Eve knew Agent Bob was a double agent.&#39;)
+
+#Managing Complex Regexes
+#You can mitigate this by telling the re.compile() function to ignore whitespace and comments inside the regular expression string. 
+#This “verbose mode” can be enabled by passing the variable re.VERBOSE as the second argument to re.compile()
+
+#Note how the previous example uses the triple-quote syntax (
+#&#39;&#39;&#39;) to create a multiline string so that you can spread the regular expression definition over many lines, 
+#making it much more legible.
+phoneRegex = re.compile(r&#39;((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)&#39;)
+
+phoneRegex = re.compile(r&#39;&#39;&#39;(
+    (\d{3}|\(\d{3}\))?            # area code
+    (\s|-|\.)?                    # separator
+    \d{3}                         # first 3 digits
+    (\s|-|\.)                     # separator
+    \d{4}                         # last 4 digits
+    (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
+    )&#39;&#39;&#39;, re.VERBOSE)
+print phoneRegex.search(&quot;(342).980-2129 x 349&quot;).group()
+
+# Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
+# use re.VERBOSE to write comments in your regular expression 
+# use re.IGNORECASE to ignore capitalization
+# combining the re.IGNORECASE, re.DOTALL, and re.VERBOSE variables using the pipe character (|), 
+# which in this context is known as the bitwise or operator.
+someRegexValue = re.compile(&#39;foo&#39;, re.IGNORECASE | re.DOTALL | re.VERBOSE)
+</code></pre>
+
+        </div>
+      </main>
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <h1 id="design-patter">design patter</h1>
+<p>Decorater </p>
+<pre><code class="lang-python">def p_decorate(func):
+    def func_wrapper(*args, **kwargs):
+        return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(*args, **kwargs))
+    return func_wrapper
+
+class Person(object):
+    def __init__(self):
+        self.name = &quot;John&quot;
+        self.family = &quot;Doe&quot;
+
+    @p_decorate
+    def get_fullname(self):
+        return self.name+&quot; &quot;+self.family
+
+my_person = Person()
+
+print (my_person.get_fullname())
+################
+from functools import wraps
+
+def tags(tag_name):
+    def tags_decorator(func):
+        @wraps(func)
+        def func_wrapper(name):
+            return &quot;&lt;{0}&gt;{1}&lt;/{0}&gt;&quot;.format(tag_name, func(name))
+        return func_wrapper
+    return tags_decorator
+
+@tags(&quot;p&quot;)
+def get_text(name):
+    &quot;&quot;&quot;returns some text&quot;&quot;&quot;
+    return &quot;Hello &quot;+name
+
+get_text(&quot;bing&quot;)
+</code></pre>
+
+        </div>
+        <div class="column2">
+          
+        </div>
+      </main>
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <h1 id="sql-connection">SQL connection</h1>
+<p>Py2MySQL</p>
+<pre><code class="lang-python">
+# Store URL
+# MySQL 5.0.3 use TEXT or VARCHAR(2083)
+
+import MySQLdb
+try:
+    # Open database connection
+    db = MySQLdb.connect(host = &quot;localhost&quot;
+                        , user = &quot;root&quot;
+                        , passwd = &quot;root&quot;
+                        , db = &quot;studyportals&quot; 
+                        , charset = &#39;utf8&#39;)
+    # prepare a cursor object using cursor() method
+    cursor = db.cursor()
+
+    # execute SQL query using execute() method.
+    cursor.execute(&quot;SELECT VERSION()&quot;)
+
+    for song in songs:
+        cur.execute(&quot;INSERT INTO song (title) VALUES (%s)&quot;, song)
+        print &quot;Auto Increment ID: %s&quot; % cur.lastrowid
+
+    # Fetch a single row using fetchone() method.
+    data = cursor.fetchone()    
+    print &quot;Database version : %s &quot; % data
+
+except MySQLdb.Error as e:
+    print &quot;Error %d: %s&quot; % (e.args[0], e.args[1])
+finally:
+    # disconnect from server
+    db.close()
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <p>py2postgresql</p>
+<pre><code class="lang-python">from datetime import date
+import datetime
+import psycopg2
+import csv
+import numpy as np
+
+try:
+    #conn = psycopg2.connect(&quot;dbname=mydb user=postgres&quot;)
+    #cur = conn.cursor()
+
+    # CREATE table
+    # cur.execute(&quot;CREATE TABLE horseMarket (id serial PRIMARY KEY, num integer, data varchar);&quot;)
+
+    # ALTER table
+    # ALTER TABLE {table_name}
+    # (1) ADD {column_name} {data_type}
+    # (2) DROP COLUMN {column_name}
+
+    #cur.execute(&quot;INSERT INTO city (num, data) VALUES (%s, %s)&quot;,(100, &quot;abc&#39;def&quot;))
+
+    # cur.execute(&quot;SELECT * FROM city;&quot;)
+    # #b = cur.fetchone()
+    # b = cur.fetchmany(3)
+    # print b
+    # c = cur.fetchall()
+    # print c
+
+    # cur.execute(
+    #     &quot;&quot;&quot;INSERT INTO some_table (an_int, a_date, another_date, a_string)
+    #     VALUES (%(int)s, %(date)s, %(date)s, %(str)s);&quot;&quot;&quot;,
+    #     {&#39;int&#39;: 10, &#39;str&#39;: &quot;O&#39;Reilly&quot;, &#39;date&#39;: datetime.date(2005, 11, 18)})
+
+    cur.execute(&quot;INSERT INTO foo VALUES (%s)&quot;, (&quot;bar&quot;,))
+    conn.commit()
+
+except psycopg2.ProgrammingError as err:
+    print err
+    print &quot;haha&quot;
+
+finally:
+    cur.close()
+    conn.close()
+</code></pre>
+
+        </div>
+      </main>
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <p>py2Neo4j</p>
+<pre><code class="lang-python">from neo4j.v1 import GraphDatabase, basic_auth
+
+driver = GraphDatabase.driver(&quot;bolt://localhost:7687&quot;, auth=basic_auth(&quot;neo4j&quot;, &quot;Appledog11@&quot;))
+session = driver.session()
+
+session.run(&quot;CREATE (a:Person {name: {name}, title: {title}})&quot;,
+              {&quot;name&quot;: &quot;Arthur&quot;, &quot;title&quot;: &quot;King&quot;})
+
+result = session.run(&quot;MATCH (a:Person) WHERE a.name = {name} &quot;
+                       &quot;RETURN a.name AS name, a.title AS title&quot;,
+                       {&quot;name&quot;: &quot;Arthur&quot;})
+for record in result:
+    print(&quot;%s %s&quot; % (record[&quot;title&quot;], record[&quot;name&quot;]))
+
+session.close()
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <p>py2spark</p>
+<pre><code class="lang-python">from pyspark.sql import SparkSession
+from pyspark.sql import Row
+from pyspark import SparkConf, SparkContext
+import time
+
+#Rank of disciplines based on number of visits (regardless the country or the portal)
+
+start_time = time.time()
+
+conf = SparkConf().setMaster(&quot;local[*]&quot;)
+sc = SparkContext(conf = conf)
+
+def loadDisciplines():
+    disciplineNames = {}
+    with open(&quot;/Users/espoelst/Documents/JADS/DataEngineering/StudyPortals/Spark/Discipline_synonym.csv&quot;) as f:
+        for line in f:
+            try:
+                fields = line.split(&#39;,&#39;)
+                disciplineNames[float(fields[1].strip(&#39;u&#39;))] = fields[0]
+            except:
+                pass
+    return disciplineNames
+
+def parseLine(line):
+    fields = line.split(&#39;,&#39;)
+    try:
+        discipline = int(fields[2].strip(&#39;&quot;&#39;))
+        country = int(fields[2].strip(&#39;&quot;&#39;))
+        portals = int(fields[1].strip(&#39;&quot;&#39;))
+        visited_date = fields[0]
+    except:
+        pass
+    return discipline,country,portals,visited_date  
+
+
+# The windows thingy Create a SparkSession (the config bit is only for Windows!)
+
+spark = SparkSession \
+    .builder \
+    .appName(&quot;Python Spark SQL basic example&quot;) \
+    .config(&quot;spark.some.config.option&quot;, &quot;some-value&quot;) \
+    .getOrCreate()
+
+nameDict = loadDisciplines()
+
+# Get the raw data
+lines = sc.textFile(&quot;file:///Users/espoelst/Documents/JADS/DataEngineering/StudyPortals/Spark/date_url_encoded.csv&quot;)
+# Convert it to a RDD of Row objects
+#movies = lines.map(lambda x: Row(Discipline = parseLine(x)))
+
+movies = lines.map(lambda x: Row(discipline = parseLine(x)[0]))
+# Convert that to a DataFrame
+movieDataset = spark.createDataFrame(movies)
+#movieDataset = movieDataset.filter(movieDataset[&#39;country&#39;] == &#39;switzerland&#39;)
+#movieDataset = movieDataset.filter(movieDataset[&#39;portals&#39;] == &#39;www.phdportal.com&#39;)
+#movieDataset = movieDataset.filter(movieDataset[&#39;visitedDate&#39;] == &#39;2016-12-10&#39;)
+
+try:
+    topDisciplines = movieDataset.groupBy(&quot;Discipline&quot;).count().orderBy(&quot;count&quot;, ascending=False).cache()
+    topDisciplines.show(100)
+except:
+    movieDataset.show(10)
+
+top10 = topDisciplines.take(10)
+
+#topDisciplines = hiveContext.sql(&#39;&quot;&quot;&#39;SELECT discipline,COUNT(discipline) FROM movieDataset WHERE country=switzerland and portals=www.phdportal.com AND visited_date=2016-12-10 GROUP BY discipline&#39;&quot;&quot;&#39;)
+#topDisciplines.show()
+#SELECT discipline,COUNT(discipline) FROM date_url_encoded WHERE country=39 and portals=2 AND visited_date=381 GROUP BY discipline
+
+#Print the results
+print(&quot;\n&quot;)
+for result in top10:
+    #Each row has movieID, count as above.
+    try:
+        print(&quot;%s: %s&quot; % (nameDict[result[0]], result[1]))
+    except:
+        pass
+
+elapsed_time = time.time() - start_time
+print(elapsed_time)
+# Stop the session
+#spark.stop()
+
+#topDisciplines.to_csv(&quot;file:///Users/espoelst/Documents/JADS/DataEngineering/StudyPortals/Spark/Output.csv&quot;)
+</code></pre>
+
+        </div>
+      </main>
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">name cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/name.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <p>sort tuple</p>
+<pre><code class="lang-python">data=[(1, 2), (4, 1), (9, 10), (13, -3)]
+# in-memory sort
+sorted_by_second_element = sorted(data, key=lambda tup: tup[0])
+# not in-memory sort
+data.sort(key=lambda x: x[1])
+</code></pre>
+<p>filter</p>
+<pre><code class="lang-python">number_list = [0.0,0.0,9.8,7.6,12.5,0.0]
+not_zero = filter(lambda x: x != 0, number_list)
+</code></pre>
+<p>Comparisons to singletons like None should always be done with is or is not, never the equality operators.</p>
+<pre><code class="lang-python">
+class Negator(object):
+    def __eq__(self, other):
+        return other
+thing = Negator()
+print (thing == None)    # None
+print (thing is None)    # False
+
+class Negator(object):
+    def __eq__(self, other):
+        return not other
+
+thing = Negator()
+print (thing == None)    # True
+print (thing is None)    # False
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <p>Read file</p>
+<pre><code class="lang-python">with open(&quot;path/file_name&quot;, &#39;r&#39;)
+    for index, record in enumerate(f, 0):
+        # process the data
+</code></pre>
+<p>Read and write csv</p>
+<pre><code class="lang-python">import csv
+def ReadCSVFile(read_file_name):
+    CrimeFile = open(read_file_name+&quot;.csv&quot;, &#39;r&#39;)
+    CrimeList = list(csv.reader(CrimeFile,delimiter=&#39;,&#39;,quotechar=&#39;&quot;&#39;))
+    CrimeFile.close()
+    return CrimeList
+
+def WriteCSVFile():
+    file11 = open(&quot;C:\\Users\\yhuang\\Desktop\\Reduced_coldspot.csv&quot;,&quot;a&quot;)
+    w = csv.writer(file11, delimiter=&#39;,&#39;, lineterminator=&#39;\n&#39;)
+    w.writerows([data])
+    file11.close()
+</code></pre>
+<p>read and write JSON</p>
+<pre><code class="lang-python">import json
+
+# json to text
+with open(&#39;path/file_name.json&#39;, &#39;w&#39;) as f:
+     json.dump(pythonValue, f)
+
+# text to json
+with open(&#39;path/file_name.json&#39;, &#39;r&#39;) as f:
+     data = json.load(f)
+     # data processing
+</code></pre>
+
+        </div>
+      </main>
+
+      <footer class="@@class">
+  <a href="https://groupe-sii.github.io/cheat-sheets">groupe-sii.github.io/cheat-sheets</a>
+  <a href="http://www.groupe-sii.com">www.groupe-sii.com</a>
+  <a href="https://blog.groupe-sii.com">blog.groupe-sii.com</a>
+  <img src="../assets/images/logoSII-white.svg">
+</footer>
+
+    </div>
+    <script src="../common/script.js"></script>
+  </body>
+</html>

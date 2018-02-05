@@ -1,0 +1,34 @@
+<h1 id="sql-connection">SQL connection</h1>
+<p>Py2MySQL</p>
+<pre><code class="lang-python">
+# Store URL
+# MySQL 5.0.3 use TEXT or VARCHAR(2083)
+
+import MySQLdb
+try:
+    # Open database connection
+    db = MySQLdb.connect(host = &quot;localhost&quot;
+                        , user = &quot;root&quot;
+                        , passwd = &quot;root&quot;
+                        , db = &quot;studyportals&quot; 
+                        , charset = &#39;utf8&#39;)
+    # prepare a cursor object using cursor() method
+    cursor = db.cursor()
+
+    # execute SQL query using execute() method.
+    cursor.execute(&quot;SELECT VERSION()&quot;)
+
+    for song in songs:
+        cur.execute(&quot;INSERT INTO song (title) VALUES (%s)&quot;, song)
+        print &quot;Auto Increment ID: %s&quot; % cur.lastrowid
+
+    # Fetch a single row using fetchone() method.
+    data = cursor.fetchone()    
+    print &quot;Database version : %s &quot; % data
+
+except MySQLdb.Error as e:
+    print &quot;Error %d: %s&quot; % (e.args[0], e.args[1])
+finally:
+    # disconnect from server
+    db.close()
+</code></pre>

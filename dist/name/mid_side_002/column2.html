@@ -1,0 +1,50 @@
+<h1 id="time">time</h1>
+<ul>
+<li><p>make the thread sleep</p>
+<pre><code class="lang-python">import time 
+time.sleep(5)
+</code></pre>
+</li>
+<li><p>time format data parsing and comparison</p>
+</li>
+</ul>
+<pre><code class="lang-python">from datetime import date
+import datetime
+def time_comparator(early_year,early_month,early_date,early_hour,early_min
+                    ,now_year,now_month,now_date,now_hour,now_min):
+    previous_time = datetime.datetime(early_year,early_month,early_date,early_hour,early_min)
+    present_time = datetime.datetime(now_year,now_month,now_date,now_hour,now_min)
+    return previous_time == present_time
+
+mytime = i[12].split(&quot;/&quot;)
+yearandtime = mytime[2].split(&quot; &quot;)
+Time = yearandtime[1].split(&quot;:&quot;)
+if early_year &lt; 100:
+    early_year = 2000 + early_year
+
+year = int(result[0],10)
+month = int(result[1],10)
+date = int(result[2],10)
+hour = int(result[3],10)
+minute = int(result[4],10)
+
+Daayttt = {&quot;0&quot;:&quot;Sunday&quot;,&quot;6&quot;:&quot;Saturday&quot;,&quot;1&quot;:&quot;Monday&quot;,&quot;2&quot;:&quot;Tuesday&quot;,&quot;3&quot;:&quot;Wednesday&quot;,&quot;4&quot;:&quot;Thursday&quot;,&quot;5&quot;:&quot;Friday&quot;}
+d0 = date(2008, 12, 28)
+d1 = date(2008, 12, 29)
+delta = (d1 - d0)
+print type(delta)
+print delta//7.0
+
+time1 = datetime.datetime(2007, 12, 6, 16, 29, 43)
+time2 = datetime.datetime(2007, 12, 6, 15, 29, 43)
+a = 0
+if time1 &gt; time2:
+    a= time1-time2
+else:
+    a= time2-time1
+print a.seconds
+
+
+year,month,date,hour,minu,second = int(year),int(month,10),int(date,10),int(hour,10),int(minu,10),int(round(float(second)))
+_time = &quot;{} {} {} {} {} {}&quot;.format(year,month,date,hour,minu,second)
+</code></pre>

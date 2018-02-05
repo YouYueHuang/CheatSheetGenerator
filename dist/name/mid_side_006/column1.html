@@ -1,0 +1,37 @@
+<h1 id="design-patter">design patter</h1>
+<p>Decorater </p>
+<pre><code class="lang-python">def p_decorate(func):
+    def func_wrapper(*args, **kwargs):
+        return &quot;&lt;p&gt;{0}&lt;/p&gt;&quot;.format(func(*args, **kwargs))
+    return func_wrapper
+
+class Person(object):
+    def __init__(self):
+        self.name = &quot;John&quot;
+        self.family = &quot;Doe&quot;
+
+    @p_decorate
+    def get_fullname(self):
+        return self.name+&quot; &quot;+self.family
+
+my_person = Person()
+
+print (my_person.get_fullname())
+################
+from functools import wraps
+
+def tags(tag_name):
+    def tags_decorator(func):
+        @wraps(func)
+        def func_wrapper(name):
+            return &quot;&lt;{0}&gt;{1}&lt;/{0}&gt;&quot;.format(tag_name, func(name))
+        return func_wrapper
+    return tags_decorator
+
+@tags(&quot;p&quot;)
+def get_text(name):
+    &quot;&quot;&quot;returns some text&quot;&quot;&quot;
+    return &quot;Hello &quot;+name
+
+get_text(&quot;bing&quot;)
+</code></pre>

@@ -1,0 +1,38 @@
+<pre><code class="lang-python"># Case-Insensitive Matching
+robocop = re.compile(r&#39;robocop&#39;, re.IGNORECASE)
+print robocop.search(&#39;Robocop is part man, part machine, all cop.&#39;).group()
+
+#Substituting Strings with the sub() Method
+# you can type \1, \2, \3, and so on, to mean “Enter the text of group 1, 2, 3, and so on, in the substitution.”
+namesRegex = re.compile(r&#39;Agent \w+&#39;)
+print namesRegex.sub(&#39;CENSORED&#39;, &#39;Agent Alice gave the secret documents to Agent Bob.&#39;)
+
+agentNamesRegex = re.compile(r&#39;Agent (\w)(\w)\w*&#39;)
+print agentNamesRegex.sub(r&#39;\2****&#39;, &#39;Agent Alice told Agent Carol that Agent Eve knew Agent Bob was a double agent.&#39;)
+
+#Managing Complex Regexes
+#You can mitigate this by telling the re.compile() function to ignore whitespace and comments inside the regular expression string. 
+#This “verbose mode” can be enabled by passing the variable re.VERBOSE as the second argument to re.compile()
+
+#Note how the previous example uses the triple-quote syntax (
+#&#39;&#39;&#39;) to create a multiline string so that you can spread the regular expression definition over many lines, 
+#making it much more legible.
+phoneRegex = re.compile(r&#39;((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)&#39;)
+
+phoneRegex = re.compile(r&#39;&#39;&#39;(
+    (\d{3}|\(\d{3}\))?            # area code
+    (\s|-|\.)?                    # separator
+    \d{3}                         # first 3 digits
+    (\s|-|\.)                     # separator
+    \d{4}                         # last 4 digits
+    (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
+    )&#39;&#39;&#39;, re.VERBOSE)
+print phoneRegex.search(&quot;(342).980-2129 x 349&quot;).group()
+
+# Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
+# use re.VERBOSE to write comments in your regular expression 
+# use re.IGNORECASE to ignore capitalization
+# combining the re.IGNORECASE, re.DOTALL, and re.VERBOSE variables using the pipe character (|), 
+# which in this context is known as the bitwise or operator.
+someRegexValue = re.compile(&#39;foo&#39;, re.IGNORECASE | re.DOTALL | re.VERBOSE)
+</code></pre>

@@ -1,0 +1,44 @@
+<p>py2postgresql</p>
+<pre><code class="lang-python">from datetime import date
+import datetime
+import psycopg2
+import csv
+import numpy as np
+
+try:
+    #conn = psycopg2.connect(&quot;dbname=mydb user=postgres&quot;)
+    #cur = conn.cursor()
+
+    # CREATE table
+    # cur.execute(&quot;CREATE TABLE horseMarket (id serial PRIMARY KEY, num integer, data varchar);&quot;)
+
+    # ALTER table
+    # ALTER TABLE {table_name}
+    # (1) ADD {column_name} {data_type}
+    # (2) DROP COLUMN {column_name}
+
+    #cur.execute(&quot;INSERT INTO city (num, data) VALUES (%s, %s)&quot;,(100, &quot;abc&#39;def&quot;))
+
+    # cur.execute(&quot;SELECT * FROM city;&quot;)
+    # #b = cur.fetchone()
+    # b = cur.fetchmany(3)
+    # print b
+    # c = cur.fetchall()
+    # print c
+
+    # cur.execute(
+    #     &quot;&quot;&quot;INSERT INTO some_table (an_int, a_date, another_date, a_string)
+    #     VALUES (%(int)s, %(date)s, %(date)s, %(str)s);&quot;&quot;&quot;,
+    #     {&#39;int&#39;: 10, &#39;str&#39;: &quot;O&#39;Reilly&quot;, &#39;date&#39;: datetime.date(2005, 11, 18)})
+
+    cur.execute(&quot;INSERT INTO foo VALUES (%s)&quot;, (&quot;bar&quot;,))
+    conn.commit()
+
+except psycopg2.ProgrammingError as err:
+    print err
+    print &quot;haha&quot;
+
+finally:
+    cur.close()
+    conn.close()
+</code></pre>

@@ -1,0 +1,33 @@
+<h1 id="os-sys">os, sys</h1>
+<p>Import module</p>
+<pre><code class="lang-python">import sys
+import os
+</code></pre>
+<p>Update module search path (temporary)</p>
+<pre><code class="lang-python">sys.path.append(&#39;module path&#39;)
+</code></pre>
+<p>Remove the last path</p>
+<pre><code class="lang-python">sys.path.pop(-1)
+</code></pre>
+<p>Set path</p>
+<pre><code class="lang-python">os.path.join(&#39;usr&#39;, &#39;bin&#39;, &#39;spam&#39;)
+</code></pre>
+<p>Get and change current working directory</p>
+<pre><code class="lang-python">os.getcwd()
+os.chdir(&#39;target dir&#39;)
+</code></pre>
+<p>Get a string of a relative path from the rsc path to dst path.</p>
+<pre><code class="lang-python">os.path.relpath(dst, src)
+</code></pre>
+<p>Get dir and base name</p>
+<pre><code class="lang-python">os.path.basename(path)
+os.path.dirname(path)
+</code></pre>
+<p>Finding File Sizes and Folder Contents</p>
+<pre><code class="lang-python">os.path.getsize(&#39;file path&#39;)
+os.listdir(&#39;dir path&#39;)
+</code></pre>
+<p>Get system info</p>
+<pre><code class="lang-python">os.name
+sys.platform
+</code></pre>

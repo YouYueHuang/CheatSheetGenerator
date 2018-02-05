@@ -1,0 +1,50 @@
+<h1 id="regular-expression">Regular expression</h1>
+<pre><code class="lang-python">
+#==============================================================================
+# \d
+# Any numeric digit from 0 to 9.
+# 
+# \D
+# Any character that is not a numeric digit from 0 to 9.
+# 
+# \w
+# Any letter, numeric digit, or the underscore character. (Think of this as matching “word” characters.)
+# 
+# \W
+# Any character that is not a letter, numeric digit, or the underscore character.
+# 
+# \s
+# Any space, tab, or newline character. (Think of this as matching “space” characters.)
+# 
+# \S
+# Any character that is not a space, tab, or newline.
+#==============================================================================
+import re
+
+phoneNumRegex = re.compile(r&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;)
+mo = phoneNumRegex.search(&#39;My number is 415-555-4242. And my friends is 999-444-2422&#39;)
+print(&#39;Phone number found: &#39; + mo.group())
+fa =phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;) # has no groups
+print fa
+
+phoneNumRegex = re.compile(r&#39;(\d\d\d)-(\d\d\d)-(\d\d\d\d)&#39;)
+mo = phoneNumRegex.search(&#39;My number is 415-555-4242.&#39;)
+print mo.group(1)
+print mo.group(2)
+print mo.group(0)
+print mo.groups()
+phoneNumRegex = re.compile(r&#39;(\d\d\d)-(\d\d\d)-(\d\d\d\d)&#39;) # has groups
+print phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;)
+
+
+phoneNumRegex = re.compile(r&#39;(\(\d\d\d\)) (\d\d\d-\d\d\d\d)&#39;)
+mo = phoneNumRegex.search(&#39;My phone number is (415) 555-4242.&#39;)
+print mo.groups()
+
+# Matching Multiple Groups with the Pipe
+heroRegex = re.compile (r&#39;Batman|Tina Fey&#39;)
+mo1 = heroRegex.search(&#39;Batman and Tina Fey.&#39;,7,200)
+print mo1.group()
+mo2 = heroRegex.search(&#39;Tina Fey and Batman.&#39;)
+print mo2.group()
+</code></pre>

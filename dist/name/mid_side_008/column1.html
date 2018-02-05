@@ -1,0 +1,17 @@
+<p>py2Neo4j</p>
+<pre><code class="lang-python">from neo4j.v1 import GraphDatabase, basic_auth
+
+driver = GraphDatabase.driver(&quot;bolt://localhost:7687&quot;, auth=basic_auth(&quot;neo4j&quot;, &quot;Appledog11@&quot;))
+session = driver.session()
+
+session.run(&quot;CREATE (a:Person {name: {name}, title: {title}})&quot;,
+              {&quot;name&quot;: &quot;Arthur&quot;, &quot;title&quot;: &quot;King&quot;})
+
+result = session.run(&quot;MATCH (a:Person) WHERE a.name = {name} &quot;
+                       &quot;RETURN a.name AS name, a.title AS title&quot;,
+                       {&quot;name&quot;: &quot;Arthur&quot;})
+for record in result:
+    print(&quot;%s %s&quot; % (record[&quot;title&quot;], record[&quot;name&quot;]))
+
+session.close()
+</code></pre>

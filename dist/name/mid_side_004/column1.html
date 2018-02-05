@@ -1,0 +1,25 @@
+<pre><code class="lang-python">batRegex = re.compile(r&#39;Bat(man|mobile|copter|bat)&#39;)
+mo = batRegex.search(&#39;Batmobile lost a wheel&#39;)
+print mo.group()
+print mo.group(1)
+
+# Optional Matching with the Question Mark
+# Matching Zero or More with the Star
+# Matching One or More with the Plus
+batRegex = re.compile(r&#39;Bat(wo)*man&#39;)  # ? + * 
+mo1 = batRegex.search(&#39;The Adventures of Batman&#39;)
+print mo1.group()
+
+mo2 = batRegex.search(&#39;The Adventures of Batwowoman&#39;)
+if mo2 is None:
+    print mo2
+else:
+    print mo2.group()
+
+#Matching Specific Repetitions with Curly Brackets
+haRegex = re.compile(r&#39;(Ha){3}&#39;)
+mo1 = haRegex.search(&#39;HaHaHa&#39;)
+print mo1.group()
+mo2 = haRegex.search(&#39;Ha&#39;)
+print mo2 == None
+</code></pre>

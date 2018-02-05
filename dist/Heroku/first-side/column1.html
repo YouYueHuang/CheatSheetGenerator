@@ -1,0 +1,18 @@
+<p> Heroku - Date: January 2018</p>
+<h1 id="deploy-python-web-framework-on-heroku">Deploy python web framework on Heroku</h1>
+<p>Pipenv installed </p>
+<pre><code class="lang-python">pip install pipenv
+</code></pre>
+<p>Set up Postgres on Windows
+<a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows">postgreSQL</a></p>
+<p>Remember to update your PATH environment variable to add the <code>bin</code> directory of your Postgres installation. The directory will be similar to this: <code>C:\Program Files\PostgreSQL\&lt;VERSION&gt;\bin</code>. If you forget to update your PATH, commands like <code>heroku pg:psql</code> won’t work.</p>
+<p>postgresql-10.1</p>
+<p>db port is 5433</p>
+<p>apache server port is 8081</p>
+<p>Display the contents of an environment variable in Windows
+<code>echo %PATH%</code></p>
+<p>Write evironmental variables to a text file.
+<code>set &gt; filename.txt</code></p>
+<p>check postgresql version</p>
+<pre><code class="lang-sh">psql --version
+</code></pre>

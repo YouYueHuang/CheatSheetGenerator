@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="../common/lib/atom-one-light.css">
+    <link rel="stylesheet" href="./maps.css">
+  </head>
+  <body>
+    <input type="checkbox" id="showPreview"/>
+    <div class="first-side">
+      <div class="cutter">
+<div class="cut cut-top-left">&nbsp;</div>
+<div class="cut cut-bottom-left">&nbsp;</div>
+<div class="cut cut-top-right">&nbsp;</div>
+<div class="cut cut-bottom-right">&nbsp;</div>
+</div>
+<header>
+    <div class="home-button no-print">
+        <a href="../" title="back to home cheat Sheet"><i class="material-icons">home</i></a>
+        <label for="showPreview"><i class="material-icons">visibility</i></label>
+    </div>
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">Git cheat sheet</div>
+            <div class="sub-title">Improve your Git skills</div>
+        </div>
+
+        <div class="logo-container">
+            <img src="../assets/images/maps.png">
+        </div>
+    </div>
+    <div class="logo-category no-print">
+        <i class="material-icons" onclick="printLarge()">print</i>
+    </div>
+</header>
+
+
+
+      <main>
+        <div class="column1">
+          <p> folium version: 0.5 - Date: January 2018</p>
+<h1 id="initialize-a-map">Initialize a map</h1>
+<pre><code class="lang-python">m = folium.Map(location=(52.518611, 13.408333), zoom_start=14)
+</code></pre>
+<p>Add a for switching between layers
+folium.LayerControl().add_to(m)</p>
+<p>Making it interactive</p>
+<pre><code class="lang-python">from ipywidgets import interact
+tiles = [name.strip() for name in &quot;&quot;&quot;
+    OpenStreetMap
+    Mapbox Bright
+    Mapbox Control Room
+    Stamen Terrain
+    Stamen Toner
+    Stamen Watercolor
+    CartoDB positron
+    CartoDB dark_matter
+    cartodbdark_matter&quot;&quot;&quot;.strip().split(&#39;\n&#39;)]
+
+@interact(lat=(-90., 90.), lon=(-180., 180.), tiles=tiles, zoom=(1, 18))
+def create_map(lat=52.518611, lon=13.408333, tiles=&quot;Stamen Toner&quot;, zoom=10):
+    return folium.Map(location=(lat, lon), tiles=tiles, zoom_start=zoom)
+</code></pre>
+<p>Draw a marker and a circle</p>
+<pre><code class="lang-python">folium.Marker([52.518611, 13.408333], popup=&#39;&lt;b&gt;Timberline Lodge&lt;/b&gt;&#39;, icon = folium.Icon(color=&#39;green&#39;,icon=&#39;ok-sign&#39;)).add_to(m) 
+
+folium.features.Circle(
+    radius=100,
+    location=[52.518611, 13.408333],
+    popup=&#39;The Waterfront&#39;,
+    color=&#39;crimson&#39;,
+    fill=True,
+    fill_color=&#39;#3186cc&#39;
+).add_to(m)
+</code></pre>
+
+        </div>
+        <div class="column2">
+          <h1 id="save-the-map-to-html">Save the map to html</h1>
+<pre><code class="lang-python">m.save(&quot;mymap.html&quot;)
+</code></pre>
+<p>Enable lat/lng popovers</p>
+<pre><code class="lang-python">m.add_child(folium.LatLngPopup())
+</code></pre>
+<p>Place markers on the fly</p>
+<pre><code class="lang-python">m.add_child(folium.ClickForMarker(popup=&#39;Waypoint&#39;))
+</code></pre>
+<p>Add html styletip</p>
+<pre><code class="lang-python">map_1.add_child(folium.Marker(
+        location=[46.7394, 2.7513],
+        popup=folium.Popup(html_info, max_width=450)
+        ,icon = folium.Icon(color=&#39;blue&#39;,icon=&#39;ok-sign&#39;)
+    )
+)
+</code></pre>
+
+        </div>
+      </main>
+
+      <footer class="print-only">
+  <a href="https://groupe-sii.github.io/cheat-sheets">groupe-sii.github.io/cheat-sheets</a>
+  <a href="http://www.groupe-sii.com">www.groupe-sii.com</a>
+  <a href="https://blog.groupe-sii.com">blog.groupe-sii.com</a>
+  <img src="../assets/images/logoSII-white.svg">
+</footer>
+
+
+
+    </div>
+
+    <hr class="no-print"/>
+
+    <div class="reverse">
+      <header class="print-only">
+    <div class="header-center">
+        <div class="description-content">
+            <div class="title">Git cheat sheet</div>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/images/maps.png" >
+        </div>
+    </div>
+</header>
+
+
+      <main>
+        <div class="column1">
+          <h1 id="tag">Tag</h1>
+<p>Tag a commit
+<code>git tag &lt;tag-name&gt;</code></p>
+<h1 id="merge">Merge</h1>
+<p>Merge <branch> on your current branch
+<code>git merge &lt;branch&gt;</code></p>
+<p>Reapply commits (of the <branch>) on top of you current branch
+<code>git rebase &lt;branch&gt;</code></p>
+<h1 id="undo">Undo</h1>
+<p>List all operations on repository
+<code>git reflog</code></p>
+<p>Discard all local changes in your working directory
+<code>git reset --hard HEAD</code></p>
+<p>Discard local changes in a file
+<code>git checkout HEAD &lt;file&gt;</code></p>
+<p>Revert a commit (add a new commit with contrary changes)
+<code>git revert &lt;commit&gt;</code></p>
+<p>Change the last commit
+<code>git commit --amend</code>
+<strong>Be careful: don&#39;t amend a published commit!</strong></p>
+<h1 id="settings">Settings</h1>
+<p>Some commands to change the default git behavior
+<code>git config --global pull. rebase true</code>
+<code>git config --global rerere.enabled 1</code></p>
+
+        </div>
+        <div class="column2">
+          <h1 id="proxy">Proxy</h1>
+<p>Add proxy on your global configuration
+<code>git config --global http.proxy http://proxy.com:1234</code></p>
+<p>Unset the global proxy
+<code>git config --global --unset http.proxy</code></p>
+<p>Add proxy on your current project directory
+<code>git config http.proxy http://proxy.com:1234</code></p>
+<p>Check your global proxy
+<code>git config --global --get http.proxy</code></p>
+<p>Check your local proxy
+<code>git config --get http.proxy</code></p>
+<h1 id="commit-rules">Commit rules</h1>
+<ul>
+<li>One commit for one task: if you have 2 tasks written in one file you can use <em>git add -p</em> and chose which chunk you need to add at your commit</li>
+<li>Try to commit as often as possible</li>
+<li>Do not commit a half-done work. You should only commit code when it&#39;s completed.</li>
+<li>Commit a stable version of your work: the tests should not failed</li>
+</ul>
+<h1 id="default-client">default client</h1>
+<p>Visualize git tree
+<code>gitk --all</code></p>
+<p>Graphical git operations
+<code>git gui</code></p>
+
+        </div>
+      </main>
+
+      <footer class="@@class">
+  <a href="https://groupe-sii.github.io/cheat-sheets">groupe-sii.github.io/cheat-sheets</a>
+  <a href="http://www.groupe-sii.com">www.groupe-sii.com</a>
+  <a href="https://blog.groupe-sii.com">blog.groupe-sii.com</a>
+  <img src="../assets/images/logoSII-white.svg">
+</footer>
+
+    </div>
+
+    <script src="../common/lib/highlight.pack.js"></script>
+    <script src="../common/script.js"></script>
+  </body>
+</html>
